@@ -1,0 +1,8 @@
+class Toy:
+    def __init__(self, name, category, description):
+        self.name = name
+        self.category = category
+        self.description = description
+
+    def __repr__(self):
+        return f"Toy(name={self.name}, category={self.category}, description={self.description})"

@@ -1,18 +1,20 @@
 class Letter:
-    def __init__(self, letter_id, child_name, age):
+    def __init__(self, letter_id, first_name, last_name, age, approved=None):
         self.id = letter_id
-        self.child_name = child_name
+        self.first_name = first_name
+        self.last_name = last_name
         self.age = age
-        self._approved = None
+        self._approved = approved
         self.toys = []
 
     def set_approved(self, status):
-        self._approved =status
+        self._approved = status
 
     def get_approved(self):
         return self._approved
-    
-    def add_toys(self, toy):
-        self.toys.appemd(toy)
 
+    def add_toy(self, toy):
+        self.toys.append(toy)
 
+    def __repr__(self):
+        return f"Letter(id={self.id}, name={self.first_name} {self.last_name}, approved={self._approved}, toys={self.toys})"
